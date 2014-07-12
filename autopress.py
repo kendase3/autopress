@@ -176,6 +176,6 @@ if __name__ == "__main__":
         print 'around the horn once!'
         if msvcrt.kbhit() and msvcrt.getch() == TRIGGER_KEY: 
             release_key(TARGET_KEY)
-            exit(0)
+            break
         time.sleep(1)
 
