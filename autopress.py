@@ -5,11 +5,10 @@
 """
 
 TRIGGER_KEY = '6'
-TARGET_KEY = 't'
+TARGET_KEY = '5'
 
 import win32api
 import win32con
-import time
 import sys
 import msvcrt
 
@@ -164,18 +163,16 @@ VK_CODE = {'backspace':0x08,
 
 
 def hold_key(key_str):
-    win32api.keybd_event(VK_CODE[key_str], 0, 0, 0)
+    win32api.keybd_event(VK_CODE[key_str], 0, win32con.KEYEVENTF_EXTENDEDKEY, 0)
 
 def release_key(key_str):
     win32api.keybd_event(VK_CODE[key_str], 0, win32con.KEYEVENTF_KEYUP, 0)
 
 if __name__ == "__main__":
     # we'll read our trigger key to see if we should toggle
-    hold_key(TARGET_KEY)
     while True:
-        print 'around the horn once!'
+        hold_key(TARGET_KEY)
         if msvcrt.kbhit() and msvcrt.getch() == TRIGGER_KEY: 
             release_key(TARGET_KEY)
             break
-        time.sleep(1)
 
