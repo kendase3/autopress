@@ -5,7 +5,7 @@
 """
 
 TRIGGER_KEY = '6'
-TARGET_KEY = '5'
+TARGET_KEY = 't'
 
 import win32api
 import win32con
@@ -13,7 +13,7 @@ import time
 import sys
 import msvcrt
 
-# special thanks to chriskieh@github for this dict
+# special thanks to chriskiehl@github for this dict
 VK_CODE = {'backspace':0x08,
            'tab':0x09,
            'clear':0x0C,
