@@ -172,7 +172,9 @@ def release_key(key_str):
 if __name__ == "__main__":
     # we'll read our trigger key to see if we should toggle
     hold_key(TARGET_KEY)
-        while True:
-            if msvcrt.getch() == TRIGGER_KEY: 
-                release_key(TARGET_KEY)
-                exit(0)
+    while True:
+        print 'around the horn once!'
+        if msvcrt.kbhit() and msvcrt.getch() == TRIGGER_KEY: 
+            release_key(TARGET_KEY)
+            exit(0)
+
