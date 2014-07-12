@@ -177,4 +177,5 @@ if __name__ == "__main__":
         if msvcrt.kbhit() and msvcrt.getch() == TRIGGER_KEY: 
             release_key(TARGET_KEY)
             exit(0)
+        time.sleep(1)
 
